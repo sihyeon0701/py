@@ -1,0 +1,23 @@
+question = list("batman") # 행맨 문제 제시
+lst = [] # 리스트 생성
+for i in range(0, len(question)) : # 반복문 시작 0부터 question의 글자 갯수 만큼
+  lst.append('_') # 리스트에 '_'을 삽입한다
+print("Here is the world")
+print(lst) # '_'을 포함한 글자 갯수를 나타내는 리스트가 출력
+num_of_try = 10 # 사용자가 행맨의 글자 갯수를 예측할 수 있는 시도 횟수의 limit
+while True : # 무한루프 구문 특정조건이 성립되어 break을 만나야지 탈출가능
+  char = input("Guess the char?") # input <- 문자 입력
+  i = 0 # 변수의 값을 초기화
+  for elem in question : # qeustion에 있는 글자로 반복문 실행 
+    if elem == char : # 만약 input에서 입력한 글자와 제시 문제의 글자가 같으면 
+      lst[i] = char # 값을 채움
+    i += 1 # i의 갯수는 증가한다
+  print(lst)
+
+  if "_" not in lst : # "_"가 리스트 안에 없으면 사용자의 승리
+    print("You won")
+    break # 무한루프 탈출
+  if num_of_try < 1 : # 남은 시도횟수가 0이면 사용자의 패배 
+    print("You lost")
+    break # 무한 루프 탈출
+  num_of_try -= 1  # 사용자의 게임 시도 횟수
