@@ -1,0 +1,20 @@
+student = {
+  "Tom" : 82,
+  "Jerry" : 93,
+  "Joon" : 99,
+  "misha" : 80,
+  "amy" : 74
+}
+
+def student_score(n) :
+  if n >= 90 :
+    return 'A'
+  elif n >= 80 :
+    return 'B'
+  elif n >= 70 :
+    return 'C'
+  else : 
+    return 'F'
+
+for sn, n in student.items() :
+  print(f"{sn}은 {student_score(n)}")
