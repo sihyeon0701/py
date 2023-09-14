@@ -1,0 +1,63 @@
+# scope
+# local scope / global scope / enclosed scope / encoding scope
+# namespace
+
+my_score = 50 
+
+# def inside_value_function() :
+#   global my_score # global 키워드를 사용하여 함수 안에 있는 my_score를 전역변수로 지정함
+#   my_score = 80 
+#   print(f"my score inside is {my_score}")
+
+# inside_value_function()
+# print(f"my score outside is {my_score}")
+
+# what about if condition 
+# if condition or for loop는 새로운 space를 만들지 않음
+# 즉, if문이나 for loop 구문 밖에서도 space안에서 
+# 지정한 변수 값이 적용됨
+# did_extra_work = True
+# if did_extra_work :
+#   my_score = 90
+
+# print(f"my score outside is {my_score}")
+
+# nonlocal
+# def a() :
+#   x = 10
+#   def b() :
+#     nonlocal x # nonlocal 키워드를 사용해 함수 밖을 빠져
+#     x = 20 # 나가도 함수 안에서 지정한 변수 값을 사용가능
+#   b()
+#   print(x)
+# a()
+
+# How Python search the variable?
+# (LEGB rule)
+# 1. local 지역
+# 2. enclosing 가까운 거리순 
+# 3. global 전역
+# 4. built-in 파이썬 내부에 저장된 namespace
+
+# built-in
+# print(dir(__builtins__))
+
+# country = ['South Korea']
+
+# def inside_list_function() :
+#   # country.append("USA")
+#   country = ['USA']
+# inside_list_function()
+# print(country)
+
+# # global keyword
+# print(globals()) # 전역변수 Name Space의 목록을 볼 수 있다.
+
+# Global Constant? (상수)
+# HTTP_ENDPOINT = "https://yelp.com"
+
+# def print_us_restaurant_url() :
+#   print(f"{HTTP_ENDPOINT}/biz/arya-steakhouse-palo-alto")
+
+# def print_korean_restaurant_url() :
+#   print(f"{HTTP_ENDPOINT}/biz/tobang-santa-clara-2")
