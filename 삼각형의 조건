@@ -1,0 +1,12 @@
+def solution(sides):
+  sides.sort()  # 제일 큰 수를 sides[2]에 저장
+
+  if sides[0] + sides[1] > sides[2]:
+    return 1
+  return 2
+
+# 위 문제는 내풀이 
+
+def solution(sides):
+    return 1 if max(sides) < (sum(sides) - max(sides)) else 2 
+# 리스트도 max나 sum 같은 내장함수를 사용할 수 있음
