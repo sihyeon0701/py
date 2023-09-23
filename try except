@@ -1,0 +1,17 @@
+# TypeError
+try:
+    print(1 + "a")
+    dict = {"k": "v"}
+    print(dict['no'])
+except TypeError:
+    print("TypeError occurs")
+else:
+    print("this got triggered due to no error found")
+finally:
+    print("always running this")
+
+# # try: something may go wrong 
+# # except: catch the error if there is an exception
+# # else: do this if no excpetion happens
+# # finally: always run either you have error or not
+
