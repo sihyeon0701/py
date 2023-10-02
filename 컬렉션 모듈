@@ -1,0 +1,6 @@
+from collections import Counter
+
+x = input("문장을 입력하시오").split()
+
+c = Counter(x) 
+print(c)
